@@ -1,9 +1,11 @@
 <template bindable="parent">
+  <require from="./jiggle-attribute"></require>
+
   <h4>${parent ? parent + ' -> ' + name : name}</h4>
   <div class="form-inline">
 	<div class="form-group">
       <label>
-		Name: 
+		Name:
         <input class="form-control" type="text" value.bind="name" />
 	  </label>
     </div>
@@ -11,6 +13,8 @@
   </div>
 
   <div style="margin-left: 3em;">
-	<recursive-component parent.bind="fullname" repeat.for="child of children"></recursive-component>
+	<div repeat.for="child of children">
+	  <recursive-component jiggle parent.bind="fullname"></recursive-component>
+    </div>
   </div>
 </template>

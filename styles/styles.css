@@ -173,3 +173,11 @@ div.au-stagger {
     opacity: 1;
   }
 }
+
+nav-bar {
+  display: block;
+}
+
+recursive-component {
+  display: inline-block;
+}
