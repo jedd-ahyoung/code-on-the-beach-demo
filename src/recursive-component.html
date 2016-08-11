@@ -1,0 +1,16 @@
+<template bindable="parent">
+  <h4>${parent ? parent + ' -> ' + name : name}</h4>
+  <div class="form-inline">
+	<div class="form-group">
+      <label>
+		Name: 
+        <input class="form-control" type="text" value.bind="name" />
+	  </label>
+    </div>
+    <button class="btn btn-primary btn-sm" click.delegate="addChild()">Add Child</button>
+  </div>
+
+  <div style="margin-left: 3em;">
+	<recursive-component parent.bind="fullname" repeat.for="child of children"></recursive-component>
+  </div>
+</template>
