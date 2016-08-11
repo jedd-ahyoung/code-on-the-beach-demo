@@ -1,18 +1,10 @@
-export class Welcome {
-  heading = 'Code on the Beach Registration';
-  firstName = 'John';
-  lastName = 'Doe';
-  attendees = [];
+export class App {
+  configureRouter(config, router) {
+    config.title = 'Aurelia';
+    config.map([
+      { route: ['', 'welcome'], name: 'welcome',      moduleId: 'welcome',      nav: true, title: 'Welcome' },
+    ]);
 
-  get fullName() {
-    return `${this.firstName} ${this.lastName}`;
-  }
-
-  submit() {
-    this.attendees.push(this.fullName);
-    alert(`Welcone to Code on the Beach, ${this.fullName}!`);
-
-    this.firstName = '';
-    this.lastName = '';
+    this.router = router;
   }
 }
